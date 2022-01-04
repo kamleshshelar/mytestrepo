@@ -12,6 +12,9 @@ jobs:
       with:
           creds: '${{ secrets.AZURE_CREDENTIALS }}'
 
+    - name: Get Node_Resource_Group
+      id: noderesourcegroup
+      run: echo "::set-output name=noderesourcegroup::$()7"
     - name: Get author name
       id: author
       run: echo "::set-output name=author::$(az network public-ip create --resource-group cluster-rg-dev-nrg --name PublicIpForIngress --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv)"
