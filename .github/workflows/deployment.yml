@@ -12,17 +12,17 @@ jobs:
       with:
           creds: '${{ secrets.AZURE_CREDENTIALS }}'
     
-    - name: create ACR
-        PublicIP:${{ az network public-ip create --resource-group cluster-rg-dev-nrg --name PublicIpForIngress --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv }}
-      run: 
-#          az group create --name bradlab-acr-rg --location australiasoutheast
-          az aks get-credentials --resource-group cluster-rg-dev --name cluster-rg-dev-cluster --overwrite-existing
-#          az network public-ip create --resource-group cluster-rg-dev-nrg --name PublicIpForIngress --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv
-    - name: Get author name
-      id: author
-      run: echo "::set-output name=author::$(az network public-ip create --resource-group cluster-rg-dev-nrg --name PublicIpForIngress --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv)"             
-    - name : print author
-      run: echo ${{ steps.author.outputs.author }}
+#     - name: create ACR
+#         PublicIP:${{ az network public-ip create --resource-group cluster-rg-dev-nrg --name PublicIpForIngress --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv }}
+#       run: 
+# #          az group create --name bradlab-acr-rg --location australiasoutheast
+#           az aks get-credentials --resource-group cluster-rg-dev --name cluster-rg-dev-cluster --overwrite-existing
+# #          az network public-ip create --resource-group cluster-rg-dev-nrg --name PublicIpForIngress --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv
+#     - name: Get author name
+#       id: author
+#       run: echo "::set-output name=author::$(az network public-ip create --resource-group cluster-rg-dev-nrg --name PublicIpForIngress --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv)"             
+#     - name : print author
+#       run: echo ${{ steps.author.outputs.author }}
    
  
 #     - name: Terraform Install
