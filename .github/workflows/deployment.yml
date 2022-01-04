@@ -12,22 +12,22 @@ jobs:
       with:
           creds: '${{ secrets.AZURE_CREDENTIALS }}'
           
-    - name: Terraform Install
-      env:
-        TERRAFORM_VERSION: "1.1.0"
-      run: |
-          tf_version=$TERRAFORM_VERSION
-          wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
-          unzip terraform_"$tf_version"_linux_amd64.zip
-          sudo mv terraform /usr/local/bin/
+#     - name: Terraform Install
+#       env:
+#         TERRAFORM_VERSION: "1.1.0"
+#       run: |
+#           tf_version=$TERRAFORM_VERSION
+#           wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
+#           unzip terraform_"$tf_version"_linux_amd64.zip
+#           sudo mv terraform /usr/local/bin/
           
-    - name: Terraform version
-      run: terraform --version
+#     - name: Terraform version
+#       run: terraform --version
         
-    - name: Terraform Init
-      run: terraform init
-#      run: |
-#        az login
-#        terraform init -input=false
-#        terraform plan
-#        terraform apply -auto-approve -input=false
+#     - name: Terraform Init
+#       run: terraform init
+# #      run: |
+# #        az login
+# #        terraform init -input=false
+# #        terraform plan
+# #        terraform apply -auto-approve -input=false
