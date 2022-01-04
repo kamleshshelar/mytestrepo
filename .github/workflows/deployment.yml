@@ -11,7 +11,11 @@ jobs:
       uses: azure/login@v1
       with:
           creds: '${{ secrets.AZURE_CREDENTIALS }}'
-          
+    
+    - name: create ACR
+      run: 
+          az group create --name bradlab-acr-rg --location australiasoutheast
+   
 #     - name: Terraform Install
 #       env:
 #         TERRAFORM_VERSION: "1.1.0"
