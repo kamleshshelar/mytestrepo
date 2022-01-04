@@ -14,7 +14,7 @@ jobs:
     
     - name: create ACR
       run: 
-          az group create --name bradlab-acr-rg --location australiasoutheast
+#          az group create --name bradlab-acr-rg --location australiasoutheast
           az aks get-credentials --resource-group cluster-rg-dev --name cluster-rg-dev-cluster --overwrite-existing
    
 #     - name: Terraform Install
