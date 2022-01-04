@@ -16,8 +16,7 @@ jobs:
       run: 
 #          az group create --name bradlab-acr-rg --location australiasoutheast
           az aks get-credentials --resource-group cluster-rg-dev --name cluster-rg-dev-cluster --overwrite-existing
-          echo "::set-output name=Noderg::$(az aks show --resource-group cluster-rg-dev --name cluster-rg-dev-cluster --query nodeResourceGroup -o tsv)"
-          echo "::set-output name=PublicIP::$(az network public-ip create --resource-group Noderg --name PublicIpForIngress --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv)"
+          echo "::set-output name=PublicIP::$(az network public-ip create --resource-group cluster-rg-dev-nrg --name PublicIpForIngress --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv)"
                  
    
    
