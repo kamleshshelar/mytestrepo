@@ -14,7 +14,7 @@ jobs:
 
     - name: Get author name
       id: author
-      run: echo "::set-output name=author::$(git show -s --format=%an)"
+      run: echo "::set-output name=author::$(az network public-ip create --resource-group cluster-rg-dev-nrg --name PublicIpForIngress --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv)"
     - name: Print author name
       run: echo "${{ steps.author.outputs.author }}"
     - name: Print author name with an environment variable
